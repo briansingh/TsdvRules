@@ -1,0 +1,29 @@
+<ng-transclude></ng-transclude>
+
+<h1 style="text-transform: capitalize">{{ tsdvrulesBasicListCtrl.service.getName()}}</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <form ng-submit="tsdvrulesBasicListCtrl.add({ Title : tsdvrulesBasicListCtrl.newTitle })">
+      <input type="text" class="form-control" ng-model="tsdvrulesBasicListCtrl.newTitle" placeholder="Type title here" />
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="todos">
+      <li class="todo-item slide-animation" ng-repeat="item in tsdvrulesBasicListCtrl.list track by item.$id">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="item.Title"/>
+            <span class="input-group-btn">
+              <button class="btn btn-default" ng-click="tsdvrulesBasicListCtrl.remove(item)">
+                <span class="glyphicon glyphicon-remove-circle"/>
+                <span class="sr-only">Remove</span>
+              </button>
+            </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
